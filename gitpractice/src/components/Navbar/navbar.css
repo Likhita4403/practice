@@ -1,0 +1,22 @@
+@media screen and (max-width: 768px) {
+    #navbarSupportedContent {
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar {
+        width: 5rem;
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .menu {
+        justify-content: center;
+    }
+    li {
+        margin-right: 3rem;
+    }
+    .navbar-nav {
+        flex-direction: row;
+    }
+}

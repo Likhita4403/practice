@@ -5,7 +5,7 @@ import About from '../About/About';
 import ContactUs from '../ContactUs/ContactUs';
 import Login from '../login/Login';
 import "bootstrap/dist/css/bootstrap.min.css";
-import './navbar.css'
+// import './navbar.css'
 // import Navbar from 'react-bootstrap/Navbar'
 
 function NavbarComp() {

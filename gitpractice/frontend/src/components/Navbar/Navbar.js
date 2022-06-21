@@ -16,10 +16,10 @@ import Button from '@mui/material/Button';
 import { Link, Route, Routes } from 'react-router-dom';
 import Home from '../Home/Home';
 import About from '../About/About';
-import ContactUs from '../ContactUs/ContactUs';
+import Testimonials from '../Testimonials/Testimonials';
 import Login from '../login/Login';
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'ContactUs','Login'];
+const navItems = ['Home', 'About', 'Testimonials','Login'];
 
 function Navbar(props) {
   const { window } = props;
@@ -95,7 +95,7 @@ function Navbar(props) {
         <Routes>
         <Route path='/home' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
-        <Route path='/ContactUs' element={<ContactUs/>}/>
+        <Route path='/Testimonials' element={<Testimonials/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/' element={<Home />}/>
       </Routes>

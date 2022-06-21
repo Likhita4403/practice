@@ -1,12 +1,14 @@
 import React from 'react'
-import Login from './Login'
+import Login from './login/Login'
+// import "./home.css"
 
-function Home() {
-  return (
-    <div>
-      <Login/>
-    </div>
-  )
+const Home= ({setLoginUser}) => {
+    return (
+        <div className="home">
+            {/* <h1>Hello Homepage</h1>
+            <div className="button" onClick={() => setLoginUser({})} >Logout</div> */}
+        </div>
+    )
+    
 }
-
 export default Home

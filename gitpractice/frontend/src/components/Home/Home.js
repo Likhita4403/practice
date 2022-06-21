@@ -1,10 +1,11 @@
 import React from 'react'
 import Login from '../login/Login'
+import Register_form from '../login/Register_form'
 
 function Home() {
   return (
     <div>
-      <Login/>
+      <Register_form/>
     </div>
   )
 }

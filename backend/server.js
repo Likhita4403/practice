@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const jwt = require('jsonwebtoken')
 const ReviewModel = require("./models/Review");
 const RegisterModel = require("./models/Register")
+const bcrypt = require("bcryptjs");
 
 const cors = require("cors");
 
@@ -47,6 +49,40 @@ app.post("/writeReview", async(req, res) => {
 
     res.json(review);
 });
+
+app.post('/Login', async(req, res) => {
+    console.log("hjfghj")
+    console.log(req.body)
+    const user = await RegisterModel.findOne({
+        email: req.body.email,
+    })
+
+    if (!user) {
+        return { status: 'error', error: 'Invalid login' }
+    }
+
+    const isPasswordValid = req.body.password === user.password
+        // bcrypt.compare(
+        //     req.body.password,
+        //     user.password
+        // )
+    console.log(isPasswordValid)
+    if (isPasswordValid) {
+        // res.send("ok")
+        console.log("ok")
+        const token = jwt.sign({
+                name: user.name,
+                email: user.email,
+            },
+            'secret123'
+        )
+        console.log(token)
+
+        return res.json({ status: 'ok', user: token })
+    } else {
+        return res.json({ status: 'error', user: false })
+    }
+})
 
 app.listen(3001, () => {
     console.log("SERVER RUNS PERFECTLY!");

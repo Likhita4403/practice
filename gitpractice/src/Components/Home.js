@@ -5,6 +5,7 @@ import Login from './login/Login'
 const Home= ({setLoginUser}) => {
     return (
         <div className="home">
+            <h1>Hello</h1>
             {/* <h1>Hello Homepage</h1>
             <div className="button" onClick={() => setLoginUser({})} >Logout</div> */}
         </div>
